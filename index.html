@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Seamless Point-level 3D Scene Interpolation with PAPR in Motion.">
+  <meta name="keywords" content="PAPR, Point cloud, Scene interpolation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAPR in Motion: Seamless Point-level 3D Scene Interpolation</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="icon" type="image/x-icon" href="./static/images/favicon.ico">
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PAPR in Motion: Seamless Point-level 3D Scene Interpolation</h1>
+          <h2 class="title is-size-4 publication-title" style="color:red">🌟 <b>CVPR 2024 Highlight</b> 🌟</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/niopeng/home" target="_blank">Shichong Peng</a>,</span>
+            <span class="author-block">
+              <a href="https://zvict.github.io/" target="_blank">Yanshu Zhang</a>,</span>
+            <span class="author-block">
+              <a href="https://www.sfu.ca/~keli/" target="_blank">Ke Li</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">APEX Lab, Simon Fraser University</p></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/paper/papr-in-motion.pdf"
+                  class="external-link button is-normal is-rounded is-dark"
+                  target="_blank">
+                  <!-- <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span> -->
+                  <span class="icon">
+                    <i class="fa fa-file"></i>
+                  </span>
+                  <span>Paper PDF</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/niopeng/PAPR-in-Motion"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <p>
+          We introduce the novel problem of <strong>point-level 3D scene interpolation</strong>. Given observations of a scene
+          at two distinct states from multiple views, the goal is to synthesize a smooth point-level interpolation between them, 
+          <strong>without any intermediate supervision</strong>. Our method, <strong>PAPR in Motion</strong>, builds upon the 
+          recent <a href="https://zvict.github.io/papr/" target="_blank">Proximity Attention Point Rendering (PAPR)</a> technique,
+          and generates seamless interpolations of both the scene geometry and appearance.
+        </p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="content column">
+        <video id="replay-video" autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/overview.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper video. -->
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <iframe width="560" height="315" src="" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Qualitative Comparisons</h2>
+      <p>
+        We compare our method to the latest dynamic scene reconstruction method, <a
+          href="https://arxiv.org/abs/2308.09713" target="_blank">Dynamic Gaussian</a>, on this task. The results show the
+        point cloud representation of the scene geometry in the first row and the corresponding RGB rendering
+        in the second row. 
+      </p>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-butterfly">
+          <video poster="" id="butterfly" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/butterfly.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-crab">
+          <video poster="" id="crab" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/crab.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dolphin">
+          <video poster="" id="dolphin" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dolphin.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-giraffe">
+          <video poster="" id="giraffe" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/giraffe.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lego">
+          <video poster="" id="lego" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lego.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-legoman">
+          <video poster="" id="legoman" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/legoman.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-stand">
+          <video poster="" id="stand" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stand.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lamp">
+          <video poster="" id="lamp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lamp.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{peng2024papr,
+      title={PAPR in Motion: Seamless Point-level 3D Scene Interpolation},
+      author={Shichong Peng and Yanshu Zhang and Ke Li},
+      booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year={2024}
+  }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 600, function () {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+
+</script>
+
+
+</body>
+</html>
