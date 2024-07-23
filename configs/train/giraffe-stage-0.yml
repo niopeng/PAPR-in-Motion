@@ -1,0 +1,10 @@
+index: "giraffe-stage-0"
+dataset:
+  path: "./data/giraffe/start/"
+eval:
+  dataset:
+    path: "./data/giraffe/start/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/giraffe/start/"

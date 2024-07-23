@@ -1,0 +1,15 @@
+index: "test-dolphin"
+stage_one_path: "dolphin-stage-1"
+stage_two_path: "dolphin-stage-2"
+geoms:
+  background:
+    constant: 3.0
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/dolphin/end/"
+  fast_iters: 15000 # number of iterations with both regularization enabled to roughly converge to the end state
+  slow_iters: 20000 # the iteration number when the Local Displacement Averaging Step (LDAS) is removed
+  frame_idx: 27 # the frame index of the test image
+  dist_type: 1 # defines how the point cloud is coloured in the visualization
+  skip_num: 4 # the number of point position checkpoints to skip in the visualization

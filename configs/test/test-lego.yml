@@ -1,0 +1,13 @@
+index: "test-lego"
+stage_one_path: "lego-stage-1"
+stage_two_path: "lego-stage-2"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/lego/end/"
+  fast_iters: 20000 # number of iterations with both regularization enabled to roughly converge to the end state
+  slow_iters: 20000 # the iteration number when the Local Displacement Averaging Step (LDAS) is removed
+  frame_idx: 65 # the frame index of the test image
+  focal: 0.2 # affects how close the point cloud is visualized
+  dist_type: 0 # defines how the point cloud is coloured in the visualization
+  skip_num: 4 # the number of point position checkpoints to skip in the visualization

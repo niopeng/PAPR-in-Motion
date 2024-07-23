@@ -1,0 +1,36 @@
+index: "butterfly-stage-2"
+load_path: "butterfly-stage-1"
+dataset:
+  path: "./data/butterfly/end/"
+training:
+  steps: 40000
+  prune_steps: 0
+  prune_start: 0
+  prune_stop: 0
+  add_steps: 0
+  add_start: 0
+  add_stop: 0
+  add_num: 0
+  fix_keys: [
+    "points",
+    # "attn",
+    # "pc_feats",
+    "renderer",
+    "points_influ_scores"
+  ]
+  lr:
+    attn:
+      type: "none"
+      base_lr: 1.0e-4
+      warmup: 0
+    feats:
+      type: "none"
+      base_lr: 5.0e-3
+      warmup: 0
+eval:
+  dataset:
+    path: "./data/butterfly/end/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/butterfly/end/"

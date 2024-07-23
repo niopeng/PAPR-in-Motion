@@ -1,0 +1,23 @@
+name: papr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip=23.3.1
+  - pytorch-cuda=11.8
+  - pytorch==2.1.2
+  - torchaudio==2.1.2
+  - torchvision==0.16.2
+  - matplotlib==3.7.1
+  - imageio
+  - scipy
+  - open3d
+  - scikit-image
+  - pip:
+      - fsspec==2024.3.1
+      - lpips==0.1.4
+      - tqdm==4.66.2
+      - imageio-ffmpeg==0.4.9

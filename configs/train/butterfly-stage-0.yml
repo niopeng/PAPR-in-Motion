@@ -1,0 +1,10 @@
+index: "butterfly-stage-0"
+dataset:
+  path: "./data/butterfly/start/"
+eval:
+  dataset:
+    path: "./data/butterfly/start/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/butterfly/start/"

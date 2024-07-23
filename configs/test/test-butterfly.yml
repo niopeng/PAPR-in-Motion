@@ -1,0 +1,12 @@
+index: "test-butterfly"
+stage_one_path: "butterfly-stage-1"
+stage_two_path: "butterfly-stage-2"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/butterfly/end/"
+  fast_iters: 20000 # number of iterations with both regularization enabled to roughly converge to the end state
+  slow_iters: 20000 # the iteration number when the Local Displacement Averaging Step (LDAS) is removed
+  frame_idx: 12 # the frame index of the test image
+  dist_type: 1 # defines how the point cloud is coloured in the visualization
+  skip_num: 4 # the number of point position checkpoints to skip in the visualization

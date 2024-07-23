@@ -1,0 +1,44 @@
+index: "giraffe-stage-1"
+load_path: "giraffe-stage-0"
+dataset:
+  path: "./data/giraffe/end/"
+  factor: 2
+  patches:
+    height: 80
+    width: 80
+training:
+  steps: 50000
+  prune_steps: 0
+  prune_start: 0
+  prune_stop: 0
+  add_steps: 0
+  add_start: 0
+  add_stop: 0
+  add_num: 0
+  fix_keys: [
+    # "points",
+    "attn",
+    "pc_feats",
+    "renderer",
+    "points_influ_scores"
+  ]
+  lr:
+    points:
+      type: "multistep"
+      base_lr: 1.5e-2
+      warmup: 30000
+      gamma: 5.0e-2
+  regularizers:
+    num_nn: 70 # higher value increases the rigidity of the moving parts during interpolation
+    weight: 5.0
+    ldas_steps: 100
+eval:
+  dataset:
+    path: "./data/giraffe/end/"
+    factor: 2
+  img_idx: 126
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/giraffe/end/"
+      factor: 2

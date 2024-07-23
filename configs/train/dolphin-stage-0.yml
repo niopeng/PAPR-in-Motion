@@ -1,0 +1,13 @@
+index: "dolphin-stage-0"
+dataset:
+  path: "./data/dolphin/start/"
+geoms:
+  background:
+    constant: 3.0
+eval:
+  dataset:
+    path: "./data/dolphin/start/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/dolphin/start/"

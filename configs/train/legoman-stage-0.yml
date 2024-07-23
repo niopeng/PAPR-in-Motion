@@ -1,0 +1,10 @@
+index: "legoman-stage-0"
+dataset:
+  path: "./data/legoman/start/"
+eval:
+  dataset:
+    path: "./data/legoman/start/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/legoman/start/"

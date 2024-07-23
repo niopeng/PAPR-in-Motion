@@ -1,0 +1,14 @@
+index: "crab-stage-0"
+dataset:
+  path: "./data/crab/start/"
+training:
+  lr:
+    points:
+      base_lr: 1.5e-3
+eval:
+  dataset:
+    path: "./data/crab/start/"
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/crab/start/"
