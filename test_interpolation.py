@@ -281,8 +281,10 @@ def plot_all(frame, testloader, pc_dir, args, model, device):
         pc.transform(np.linalg.inv(c2w_np @ blender2opencv))
         cur_points = np.asarray(pc.points)
         if dist_type == 0:
+            # colour point cloud based on distances to the origin
             dists = np.sqrt((cur_points**2).sum(axis=1))
         else:
+            # colour point cloud based on distances to the camera
             dists = get_depth(cur_points, c2w_np[:3, -1])
         colors = (dists - dists.min()) / (dists.max() - dists.min())
         img = plot_pc(cur_points, colors, focal=focal)
