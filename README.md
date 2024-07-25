@@ -67,6 +67,9 @@ python test_interpolation.py --opt configs/test/test-{scene}.yml
 ```
 
 
+## Try out your own scenes
+We also provide generic configuration files in `configs/train/example_stage_{0-2}.yml` for training with your own scenes, along with a sample configuration file for visualizing the scene interpolation in `configs/test/test_example.yml`.
+
 ## BibTeX
 ```
 @inproceedings{peng2024papr,

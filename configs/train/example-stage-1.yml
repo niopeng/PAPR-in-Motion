@@ -1,0 +1,43 @@
+index: "example-stage-1"
+load_path: "example-stage-0" # TODO: change to the index of the previous stage
+dataset:
+  path: "./data/example/end/" # TODO: change to your dataset path
+  factor: 2 # OPTIONAL: adjust the downsampling factor of the input images if needed
+  patches:
+    height: 80 # OPTIONAL: adjust the patch size so that it's roughly 1/5 of the height of the downsampled input images
+    width: 80 # OPTIONAL: adjust the patch size so that it's roughly 1/5 of the width of the downsampled input images
+training:
+  steps: 40000 # OPTIONAL: adjust the total number of training steps to converge to the end state, increase if needed
+  prune_steps: 0
+  prune_start: 0
+  prune_stop: 0
+  add_steps: 0
+  add_start: 0
+  add_stop: 0
+  add_num: 0
+  fix_keys: [
+    # "points",
+    "attn",
+    "pc_feats",
+    "renderer",
+    "points_influ_scores"
+  ]
+  lr:
+    points:
+      type: "multistep"
+      base_lr: 1.5e-2 # TODO: adjust the learning rate of the points so that the point cloud roughly converges to the end state within "warmup" steps
+      warmup: 20000 # OPTIONAL: increase the number of warmup steps if the point cloud does not converge to the end state
+      gamma: 5.0e-2
+  regularizers:
+    num_nn: 200 # TODO: higher value increases the rigidity of the moving parts during interpolation, and vice versa
+    weight: 5.0
+    ldas_steps: 100
+eval:
+  dataset:
+    path: "./data/example/end/" # TODO: change to your dataset path
+    factor: 2 # OPTIONAL: adjust the downsampling factor so that the input images are not too large
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/example/end/" # TODO: change to your dataset path
+      factor: 2 # OPTIONAL: adjust the downsampling factor so that the input images are not too large

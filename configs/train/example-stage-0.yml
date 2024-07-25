@@ -1,0 +1,10 @@
+index: "example-stage-0"
+dataset:
+  path: "./data/example/start/" # TODO: change to your dataset path
+eval:
+  dataset:
+    path: "./data/example/start/" # TODO: change to your dataset path
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/example/start/" # TODO: change to your dataset path

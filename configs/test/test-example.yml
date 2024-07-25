@@ -1,0 +1,12 @@
+index: "test-example"
+stage_one_path: "example-stage-1" # TODO: change to the path of stage 1
+stage_two_path: "example-stage-2" # TODO: change to the path of stage 2
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/example/end/" # TODO: change to your dataset path
+  fast_iters: 20000 # TODO: change to the "training.lr.points.warmup" or the number of iteration steps to roughly converge to the end state (whichever is smaller)
+  slow_iters: 20000 # TODO: change to the "training.lr.points.warmup", this is the iteration number when LDAS is disabled
+  frame_idx: 0 # TODO: change the frame index of the test image pose to be visualized
+  dist_type: 1 # OPTIONAL: defines how the point cloud is coloured in the visualization, 0 for calculating distances w.r.t. the origin, 1 for calculating distances w.r.t. the camera center
+  skip_num: 4 # OPTIONAL: the number of point position checkpoints to skip in the visualization
