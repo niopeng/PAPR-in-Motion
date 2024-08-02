@@ -192,6 +192,38 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Why does Gaussian Splatting fail?</h2>
+      <p>As shown in the results above, methods build on Gaussian Splatting encounter difficulties in generating smooth
+      point-level scene interpolations. This is due to the following issues:
+      </p>
+      <h2 class="title is-5">Vanishing Gradient</h2>
+        <p>
+          Consider a pixel with high loss that’s not covered by any splat. Splatting-based methods would fail to move splats to
+          cover it because of vanishing gradients. PAPR avoids this issue by using an attention mechanism where the total
+          attention weights always sum up to one, making it more suitable for <strong>learning large scene changes</strong>.
+        </p>
+        <br>
+        <img src="./static/images/gradient.png" alt="Vanishing Gradient" style="width: 75%; display: block; margin: 0 auto;">
+      <h2 class="title is-5">Rendering Breaks Under Non-rigid Transformation</h2>
+      <p>
+        Gaussian splats may no longer be Gaussian after non-rigid transformations and would introduce gaps in rendering. In
+        contrast, attention-based methods like PAPR render by <strong>interpolating</strong> nearby points and avoid gaps naturally.
+      </p>
+      <br>
+      <img src="./static/images/interpolation.png" alt="Splatting vs Attention" style="width: 75%; display: block; margin: 0 auto;">
+      <br>
+      <p>
+        Compared to Gaussian Splatting, PAPR can better preserve <strong>rendering quality</strong> after non-rigid transformation, allowing
+        for rendering non-rigid scene changes during the interpolation process.
+      </p>
+      <br>
+      <img src="./static/images/stretch.png" alt="GS vs PAPR" style="width: 75%; display: block; margin: 0 auto;">
+  </div>
+</section>
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
