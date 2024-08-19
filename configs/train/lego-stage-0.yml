@@ -1,6 +1,9 @@
 index: "lego-stage-0"
 dataset:
   path: "./data/lego/start/"
+geoms:
+  points:
+    init_scale: [1.2, 1.2, 1.2]
 training:
   prune_thresh_list: [0.0, 0.2]
   prune_steps_list: [40000]
