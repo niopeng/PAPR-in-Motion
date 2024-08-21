@@ -4,7 +4,7 @@
 <img src="./images/SFU_AI.png" height=100px /><img src="images/APEX_lab.png" height=120px />
 
 [Project Site](https://niopeng.github.io/PAPR-in-Motion/)
- | [Paper](https://arxiv.org/abs/2406.05533) | [Video](https://youtu.be/vysmn3TN4FY) | [Data](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EueJQ8wniWZOmbCZLjhrDioBsnEi_LPLZ577fUSuvgvj-Q?e=TsqWV8)
+ | [Paper](https://arxiv.org/abs/2406.05533) | [Video](https://youtu.be/vysmn3TN4FY) | [Data](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EueJQ8wniWZOmbCZLjhrDioBsnEi_LPLZ577fUSuvgvj-Q?e=TsqWV8) | [Pretrained Models](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EjH3JVt4bT9LnbOALkPmHG4BLRoYeTNbMdwAu3FP6qAfcA?e=N3g3gp)
 
 We introduce the novel problem of **point-level 3D scene interpolation**. Given observations of a scene at two distinct states from multiple views, the goal is to synthesize a smooth point-level interpolation between them, **without any intermediate supervision**. Our method, **PAPR in Motion**, builds upon the recent [Proximity Attention Point Rendering (PAPR)](https://zvict.github.io/papr/) technique, and generates seamless interpolations of both the scene geometry and appearance.
 
@@ -66,6 +66,9 @@ To create scene interpolations between the start and end states, use the command
 python test_interpolation.py --opt configs/test/test-{scene}.yml
 ```
 
+
+## Pretrained Models
+We provide the pretrained models of both synthetic and real-world scenes [here](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EjH3JVt4bT9LnbOALkPmHG4BLRoYeTNbMdwAu3FP6qAfcA?e=N3g3gp). Please unzip and put them under `experiments/`. 
 
 ## Try out your own scenes
 We also provide generic configuration files in `configs/train/example_stage_{0-2}.yml` for training with your own scenes, along with a sample configuration file for visualizing the scene interpolation in `configs/test/test_example.yml`.
