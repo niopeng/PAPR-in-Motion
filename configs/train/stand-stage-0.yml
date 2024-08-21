@@ -1,0 +1,18 @@
+index: "stand-stage-0"
+dataset:
+  path: "./data/stand/start/"
+  factor: 5
+geoms:
+  points:
+    init_scale: [1.1, 1.1, 1.1]
+  background:
+    constant: 3.0
+eval:
+  dataset:
+    path: "./data/stand/start/"
+    factor: 5
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/stand/start/"
+      factor: 5

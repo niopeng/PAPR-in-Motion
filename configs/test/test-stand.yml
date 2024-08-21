@@ -1,0 +1,16 @@
+index: "test-stand"
+stage_one_path: "stand-stage-1"
+stage_two_path: "stand-stage-2"
+geoms:
+  background:
+    constant: 3.0
+test:
+  datasets:
+    - name: "testset"
+      path: "./data/stand/end/"
+      factor: 5
+  fast_iters: 20000
+  slow_iters: 20000
+  frame_idx: 55
+  dist_type: 1
+  skip_num: 4
