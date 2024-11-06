@@ -68,7 +68,7 @@ python test_interpolation.py --opt configs/test/test-{scene}.yml
 
 
 ## Pretrained Models
-We provide the pretrained models of both synthetic and real-world scenes [here](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EjH3JVt4bT9LnbOALkPmHG4BLRoYeTNbMdwAu3FP6qAfcA?e=N3g3gp). Please unzip and put them under `experiments/`. 
+We provide the pretrained models of both synthetic and real-world scenes [here](https://1sfu-my.sharepoint.com/:f:/g/personal/spa176_sfu_ca/EjH3JVt4bT9LnbOALkPmHG4BLRoYeTNbMdwAu3FP6qAfcA?e=fbZHAP). Please unzip and put them under `experiments/`. 
 
 ## Try out your own scenes
 We also provide generic configuration files in `configs/train/example_stage_{0-2}.yml` for training with your own scenes, along with a sample configuration file for visualizing the scene interpolation in `configs/test/test_example.yml`.
